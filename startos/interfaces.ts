@@ -3,10 +3,9 @@ import { sdk } from './sdk'
 import { uiPort } from './utils'
 
 export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
-  const uiMulti = sdk.MultiHost.of(effects, 'ui-multi')
-  const uiMultiOrigin = await uiMulti.bindPort(uiPort, {
-    protocol: 'http',
-  })
+  const mainHost = sdk.MultiHost.of(effects, 'main')
+  const origin = await mainHost.bindPort(uiPort, { protocol: 'http' })
+
   const ui = sdk.createInterface(effects, {
     name: i18n('Web UI'),
     id: 'ui',
@@ -19,7 +18,5 @@ export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
     query: {},
   })
 
-  const uiReceipt = await uiMultiOrigin.export([ui])
-
-  return [uiReceipt]
+  return [await origin.export([ui])]
 })
