@@ -37,8 +37,8 @@ jobs:
 
       - name: Install start-cli
         run: |
-          curl -L -o /usr/local/bin/start-cli \
-            https://github.com/Start9Labs/start-os/releases/download/v0.4.0-beta.5/start-cli-x86_64
+          curl -fL -o /usr/local/bin/start-cli \
+            https://github.com/Start9Labs/start-os/releases/download/v0.4.0-beta.8/start-cli_x86_64-linux
           chmod +x /usr/local/bin/start-cli
           start-cli --version
 
