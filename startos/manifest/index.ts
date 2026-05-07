@@ -7,7 +7,7 @@ export const manifest = setupManifest({
   license: 'MIT',
   packageRepo: 'https://github.com/semillabitcoin/bed-startos',
   upstreamRepo: 'https://github.com/semillabitcoin/descriptor-cifrado',
-  marketingUrl: null,
+  marketingUrl: 'https://github.com/semillabitcoin/bed-startos',
   donationUrl: null,
   docsUrls: ['https://github.com/semillabitcoin/bed-startos#readme'],
   description: { short, long },
