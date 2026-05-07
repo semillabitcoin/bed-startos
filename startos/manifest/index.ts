@@ -15,11 +15,7 @@ export const manifest = setupManifest({
   images: {
     main: {
       source: {
-        // D-01: pin by digest, not by tag. Get digest after Phase 3 tag push:
-        //   docker buildx imagetools inspect ghcr.io/semillabitcoin/descriptor-cifrado:v0.1.0
-        // Plan 04 will replace this placeholder with the actual digest
-        dockerTag:
-          'ghcr.io/semillabitcoin/descriptor-cifrado@sha256:PLACEHOLDER_DIGEST_SET_BY_PLAN_04',
+        dockerTag: 'ghcr.io/semillabitcoin/descriptor-cifrado@sha256:41684bce9dd4ec6270965f8df2caafecab031b573ab9dd52c38937c057fa67b5',
       },
       arch: ['x86_64', 'aarch64'],
     },
