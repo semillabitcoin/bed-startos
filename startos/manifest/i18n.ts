@@ -1,9 +1,13 @@
 export const short = {
   en_US: 'Encrypt Bitcoin descriptor backups for redundant multisig storage',
-  es_ES: 'Cifra backups de descriptors Bitcoin para almacenamiento multisig redundante',
-  de_DE: 'Bitcoin-Descriptor-Backups für redundante Multisig-Speicherung verschlüsseln',
-  pl_PL: 'Szyfruj kopie zapasowe deskryptorów Bitcoin dla redundantnego przechowywania multisig',
-  fr_FR: 'Chiffrez les sauvegardes de descripteurs Bitcoin pour un stockage multisig redondant',
+  es_ES:
+    'Cifra backups de descriptors Bitcoin para almacenamiento multisig redundante',
+  de_DE:
+    'Bitcoin-Descriptor-Backups für redundante Multisig-Speicherung verschlüsseln',
+  pl_PL:
+    'Szyfruj kopie zapasowe deskryptorów Bitcoin dla redundantnego przechowywania multisig',
+  fr_FR:
+    'Chiffrez les sauvegardes de descripteurs Bitcoin pour un stockage multisig redondant',
 }
 
 export const long = {

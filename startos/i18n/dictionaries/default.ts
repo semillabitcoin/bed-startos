@@ -2,14 +2,13 @@ export const DEFAULT_LANG = 'en_US'
 
 const dict = {
   // main.ts
-  'Starting BED!': 0,
-  'Web Interface': 1,
-  'The web interface is ready': 2,
-  'The web interface is not ready': 3,
+  'Web Interface': 0,
+  'The web interface is ready': 1,
+  'The web interface is not ready': 2,
 
   // interfaces.ts
-  'Web UI': 4,
-  'Encrypt and decrypt Bitcoin descriptor backups': 5,
+  'Web UI': 3,
+  'Encrypt and decrypt Bitcoin descriptor backups': 4,
 } as const
 
 /**
