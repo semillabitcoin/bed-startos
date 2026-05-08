@@ -14,6 +14,43 @@ start-cli s9pk inspect bed_<arch>.s9pk manifest | grep dockerTag
 
 ---
 
+## [0.3.0] — 2026-05-09
+
+### Added
+- **Liana JSON passthrough**: BED now encrypts and decrypts wallet exports
+  from Liana producción (JSON format with nested descriptor), preserving
+  metadata. Round-trip is byte-identical. Compatible interop with `.bed`
+  files produced by Liana 0.0.2.
+- **Sparrow BIP329 JSONL passthrough**: BED also encrypts and decrypts
+  exports from Sparrow Wallet (multi-line JSONL with labels per BIP-329).
+  Frontend visually distinguishes Sparrow exports from classic / Liana on
+  decrypt.
+- **QR graceful fallback**: when an encrypted descriptor exceeds the QR
+  code size limit, the page no longer breaks. Binary and armored downloads
+  remain available; the QR panel degrades cleanly to a "no QR available"
+  state.
+- **File picker accepts more formats**: the "select file" dialog in the
+  Encrypt tab now accepts `.txt`, `.descriptor`, `.json` and `.jsonl`
+  (previously only `.txt` / `.descriptor`). Drag-and-drop already
+  supported these.
+
+### Changed
+- Removed the placeholder "Mi multisig 3 de 5" from the Name field — the
+  helper text already explains the field's purpose.
+- Form label "Descriptor multisig" simplified to "Descriptor" (the form
+  accepts any descriptor with multipath, not only multisig).
+
+### Notes
+- No data migration needed. Existing history entries continue to work
+  unchanged.
+
+### Image digest
+`ghcr.io/semillabitcoin/descriptor-cifrado@sha256:1ded4e601c079b3c2d9da8c99461feef542f2f464216a8d7a670288fb8e2c7ae`
+
+[Release on GitHub](https://github.com/semillabitcoin/bed-startos/releases/tag/v0.3.0)
+
+---
+
 ## [0.2.0] — 2026-05-08
 
 ### Added
