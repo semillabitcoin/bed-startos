@@ -1,1 +1,0 @@
-ghcr.io/semillabitcoin/descriptor-cifrado@sha256:67b72a6fd749f880081ca51b42e16ef6726504a641cd21718a6f0d2b7664b08b
