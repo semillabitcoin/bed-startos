@@ -6,3 +6,10 @@ node_modules/
 docker-images
 javascript
 ncc-cache
+
+# Internal AI assistant context — not for public repo
+CLAUDE.md
+.claude/
+
+# GSD planning artifacts
+.planning/
