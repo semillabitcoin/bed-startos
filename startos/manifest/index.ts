@@ -16,7 +16,7 @@ export const manifest = setupManifest({
     main: {
       source: {
         dockerTag:
-          'ghcr.io/semillabitcoin/descriptor-cifrado@sha256:31b8eddc597b7a27343ec17b0a6cb94874909dae8d4a70577c5c1dc4e204556f',
+          'ghcr.io/semillabitcoin/descriptor-cifrado@sha256:b43334787a03b723e45c52b10409ae573aeaf18697ca12f469095fc81ad5eae7',
       },
       arch: ['x86_64', 'aarch64'],
     },
