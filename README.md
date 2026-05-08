@@ -1,5 +1,7 @@
 # BED — Bitcoin Encrypted Backup (StartOS)
 
+[![Latest release](https://img.shields.io/github/v/release/semillabitcoin/bed-startos?label=release&color=blue)](https://github.com/semillabitcoin/bed-startos/releases/latest)
+[![Release workflow](https://img.shields.io/github/actions/workflow/status/semillabitcoin/bed-startos/release.yml?label=release%20build)](https://github.com/semillabitcoin/bed-startos/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![StartOS](https://img.shields.io/badge/StartOS-0.4.0-orange)](https://start9.com)
 
@@ -37,6 +39,17 @@ Then sideload via StartOS UI ("System → Sideload Package") or CLI:
 ```bash
 start-cli package install -s bed_<arch>.s9pk
 ```
+
+### Verifying the build
+
+Each release pins the upstream `descriptor-cifrado` image by digest. To
+confirm a downloaded `.s9pk` matches the digest published for that release:
+
+```bash
+start-cli s9pk inspect bed_<arch>.s9pk manifest | grep dockerTag
+```
+
+The digest must match the entry for that version in [CHANGELOG.md](CHANGELOG.md).
 
 ### Registry (Semilla Bitcoin)
 
@@ -112,8 +125,19 @@ echo "$GHCR_PAT" | docker login ghcr.io -u <username> --password-stdin
 
 - **s9pk wrapper** (installation, StartOS integration, CI): [bed-startos/issues](https://github.com/semillabitcoin/bed-startos/issues)
 - **Underlying tool** (encryption logic, UI, API): [descriptor-cifrado/issues](https://github.com/semillabitcoin/descriptor-cifrado/issues)
+- **Security vulnerabilities**: see [SECURITY.md](SECURITY.md) — please use the
+  private security advisory flow on the relevant repo, not public issues.
 
 ---
+
+## Contributing
+
+Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the build
+environment, workflow, and the maintainer release process.
+
+## Changelog
+
+Per-release notes and digest pins live in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
