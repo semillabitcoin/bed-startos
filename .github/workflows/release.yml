@@ -29,11 +29,16 @@ jobs:
           printf '%s' '${{ secrets.DEV_KEY }}' > ~/.startos/developer.key.pem
           chmod 600 ~/.startos/developer.key.pem
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+          cache: pnpm
 
       - name: Install system dependencies
         run: sudo apt-get install -y squashfs-tools-ng
@@ -55,8 +60,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install npm deps
-        run: npm ci
+      - name: Install pnpm deps
+        run: pnpm install --frozen-lockfile
 
       - name: Build s9pk (${{ matrix.arch.target }})
         env:

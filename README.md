@@ -105,12 +105,12 @@ What BED does NOT protect against:
 
 ## Building from Source
 
-Requirements: `node` 20+, `start-cli` 0.4.0-beta.5+, `~/.startos/developer.key.pem` (from `start-cli init-key`).
+Requirements: `node` 20+, `pnpm` 9+ (`npm install -g pnpm`), `start-cli` 0.4.0-beta.5+, `~/.startos/developer.key.pem` (from `start-cli init-key`).
 
 ```bash
 git clone https://github.com/semillabitcoin/bed-startos.git
 cd bed-startos
-npm ci
+pnpm install --frozen-lockfile
 make clean x86 arm   # produces bed_x86_64.s9pk and bed_aarch64.s9pk
 ```
 

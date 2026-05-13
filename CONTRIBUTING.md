@@ -12,7 +12,7 @@ API and frontend live upstream in
 
 Requirements:
 
-- Node.js 20+ and npm
+- Node.js 20+ and pnpm 9+ (`npm install -g pnpm`)
 - `start-cli` 0.4.0-beta.5+ (see [Start9 packaging docs](https://docs.start9.com/packaging/))
 - A developer key at `~/.startos/developer.key.pem` (created with `start-cli init-key`)
 - Docker (the build pulls the upstream multi-arch image from GHCR)
@@ -20,7 +20,7 @@ Requirements:
 ## Build locally
 
 ```bash
-npm ci
+pnpm install --frozen-lockfile
 make clean x86 arm   # produces bed_x86_64.s9pk and bed_aarch64.s9pk
 ```
 
@@ -33,7 +33,7 @@ echo "$GHCR_PAT" | docker login ghcr.io -u <username> --password-stdin
 ## Workflow
 
 1. Branch from `main` (`git checkout -b chore/<short-description>`).
-2. Make your changes. Run `npm run check` (typecheck) before pushing.
+2. Make your changes. Run `pnpm run check` (typecheck) before pushing.
 3. Open a pull request against `main`.
 
 ## Release process (maintainers)
@@ -58,7 +58,7 @@ release pins a specific upstream digest and adds a `VersionInfo` entry.
    - Append the previous `current` to `other` (preserves the upgrade graph).
 6. Add an entry to `CHANGELOG.md` with the date, digest, summary and
    GitHub release link.
-7. `npm run check` to typecheck, then commit:
+7. `pnpm run check` to typecheck, then commit:
    ```bash
    git commit -m "feat(<version>): pin GHCR digest and add v<version>.1 VersionInfo"
    git tag v<version>
@@ -69,7 +69,7 @@ release pins a specific upstream digest and adds a `VersionInfo` entry.
 
 ## Style
 
-- TypeScript: `npm run prettier` formats the `startos/` directory in place.
+- TypeScript: `pnpm run prettier` formats the `startos/` directory in place.
 - Commits: short imperative subject, optional body explaining the *why*.
 
 ## Reporting security issues
